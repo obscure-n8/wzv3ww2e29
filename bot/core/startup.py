@@ -327,12 +327,12 @@ async def load_configurations():
         async with aiopen(".netrc", "w"):
             pass
 
-    from .cpu import service_cores
+from .cpu import service_cores
     
 cmd = f'chmod 600 .netrc && cp .netrc /root/.netrc && chmod +x setpkgs.sh && ./setpkgs.sh {BinConfig.ARIA2_NAME} "{service_cores()}" {Config.CPU_LIMIT}'
-  await (await create_subprocess_shell(cmd)).wait()
+await (await create_subprocess_shell(cmd)).wait()
 
-    if await aiopath.exists("accounts.zip"):
+if await aiopath.exists("accounts.zip"):
         if await aiopath.exists("accounts"):
             await rmtree("accounts", ignore_errors=True)
         await cmd_exec(["7z", "x", "-o.", "-aoa", "accounts.zip", "accounts/*.json"])
