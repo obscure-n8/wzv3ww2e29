@@ -572,7 +572,7 @@ async def qb_leech(client, message):
 async def uphoster(client, message):
     mirror_task = Mirror(client, message, is_uphoster=True)
     bot_loop.create_task(mirror_task.new_event())
-)
+
 
 async def clear_seedr_account(email, password):
     client = SeedrClient(email, password)
