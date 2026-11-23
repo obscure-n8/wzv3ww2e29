@@ -378,3 +378,6 @@ async def load_configurations():
     from ..helper.ext_utils.tunnel_monitor import apply_tunnel_url_once
 
     await apply_tunnel_url_once()
+    
+async def update_nzb_options():
+    pass
