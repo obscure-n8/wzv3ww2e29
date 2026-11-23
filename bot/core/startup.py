@@ -329,7 +329,7 @@ async def load_configurations():
 
     from .cpu import service_cores
     
-  cmd = f'chmod 600 .netrc && cp .netrc /root/.netrc && chmod +x setpkgs.sh && ./setpkgs.sh {BinConfig.ARIA2_NAME} "{service_cores()}" {Config.CPU_LIMIT}'
+cmd = f'chmod 600 .netrc && cp .netrc /root/.netrc && chmod +x setpkgs.sh && ./setpkgs.sh {BinConfig.ARIA2_NAME} "{service_cores()}" {Config.CPU_LIMIT}'
   await (await create_subprocess_shell(cmd)).wait()
 
     if await aiopath.exists("accounts.zip"):
