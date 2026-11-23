@@ -95,3 +95,4 @@ if not Config.WEB_ACCESS_PASSWORD:
     Config.WEB_ACCESS_PASSWORD = token_hex(32)
 
 scheduler = AsyncIOScheduler(event_loop=bot_loop)
+sabnzbd_client = None
